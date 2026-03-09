@@ -7,8 +7,12 @@
   "plugins": [
     {
       "name": "kiro",
-      "source": "./",
-      "description": "Spec-driven development methodology with skills for requirements, design, tasks, AI prompting, QA, and troubleshooting"
+      "source": {
+        "source": "url",
+        "url": "git@sc.github.com:softwarecatscomgm/kiro.git"
+      },
+      "description": "Spec-driven development methodology with agents, commands, and skills for requirements, design, tasks, AI prompting, QA, and troubleshooting",
+      "version": "1.1.1"
     }
   ]
 }
