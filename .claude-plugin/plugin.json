@@ -1,13 +1,13 @@
 {
-  "name": "kiro-spec-driven",
-  "version": "1.0.0",
-  "description": "Spec-driven development methodology for Claude Code. Provides skills for requirements engineering (EARS format), design documentation, task breakdown, AI prompting strategies, quality assurance, and troubleshooting.",
+  "name": "kiro",
+  "version": "1.1.0",
+  "description": "Spec-driven development methodology for Claude Code. Provides agents, commands, and skills for requirements engineering (EARS format), design documentation, task breakdown, AI prompting strategies, quality assurance, and troubleshooting.",
   "author": {
-    "name": "Jason Kneen",
-    "url": "https://github.com/jasonkneen"
+    "name": "SoftwareCats",
+    "url": "https://github.com/softwarecatscomgm"
   },
-  "homepage": "https://github.com/jasonkneen/kiro",
-  "repository": "https://github.com/jasonkneen/kiro",
+  "homepage": "https://github.com/softwarecatscomgm/kiro",
+  "repository": "https://github.com/softwarecatscomgm/kiro",
   "license": "MIT",
   "keywords": [
     "spec-driven-development",
