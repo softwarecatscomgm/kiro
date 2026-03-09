@@ -100,9 +100,9 @@ kiro/
 │   └── kiro/
 │       ├── .claude-plugin/
 │       │   └── plugin.json    # Plugin manifest
-│       ├── agents/kiro/       # 9 agents
-│       ├── commands/kiro/     # 12 commands
-│       └── skills/kiro/       # 8 skills
+│       ├── agents/            # 9 agents
+│       ├── commands/           # 12 commands
+│       └── skills/             # 8 skills
 ├── mcp-server/                # Optional MCP server
 └── spec-process-guide/        # Full documentation
 ```

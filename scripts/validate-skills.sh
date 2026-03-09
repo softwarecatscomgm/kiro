@@ -4,7 +4,7 @@
 # Checks for required YAML frontmatter fields and basic structure
 #
 
-SKILLS_DIR="$(dirname "$0")/../plugins/kiro/skills/kiro"
+SKILLS_DIR="$(dirname "$0")/../plugins/kiro/skills"
 ERRORS=0
 SKILLS_FOUND=0
 
