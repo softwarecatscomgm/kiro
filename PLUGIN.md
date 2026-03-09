@@ -1,40 +1,39 @@
 # Kiro Plugin for Claude Code
 
-A Claude Code plugin providing spec-driven development skills following the [agentskills.io](https://agentskills.io) specification.
+A Claude Code plugin providing spec-driven development with agents, commands, and skills.
 
 ## Installation
 
-### Method 1: Install from GitHub (Recommended)
+### From Marketplace (Recommended)
 
 ```bash
 # In Claude Code
-/plugin marketplace add https://github.com/jasonkneen/kiro
-/plugin install kiro-spec-driven@kiro-marketplace
+/plugin marketplace add https://github.com/softwarecatscomgm/kiro
+/plugin install kiro@kiro-marketplace
 ```
 
-### Method 2: Install from Local Clone
+### From Local Clone
 
 ```bash
-# Clone the repository
-git clone https://github.com/jasonkneen/kiro.git
+git clone https://github.com/softwarecatscomgm/kiro.git
 cd kiro
 
 # In Claude Code (from parent directory)
 /plugin marketplace add ./kiro
-/plugin install kiro-spec-driven@kiro-marketplace
+/plugin install kiro@kiro-marketplace
 ```
 
 ### Installation Scopes
 
 ```bash
 # User scope (default) - available in all projects
-/plugin install kiro-spec-driven@kiro-marketplace
+/plugin install kiro@kiro-marketplace
 
 # Project scope - shared with team via git
-/plugin install kiro-spec-driven@kiro-marketplace --scope project
+/plugin install kiro@kiro-marketplace --scope project
 
 # Local scope - project-specific, gitignored
-/plugin install kiro-spec-driven@kiro-marketplace --scope local
+/plugin install kiro@kiro-marketplace --scope local
 ```
 
 ## Included Skills
@@ -52,39 +51,22 @@ Once installed, Claude will automatically use these skills when relevant:
 | **troubleshooting** | Problem resolution | "debug", "troubleshoot", "issue with" |
 | **create-steering-documents** | Project guidelines setup | "steering documents", "project standards", "setup guidelines" |
 
-## Usage Examples
+## Available Commands
 
-### Start a New Spec
-
-```
-Create a spec for user authentication with OAuth support
-```
-
-Claude will automatically invoke the spec-driven-development skill.
-
-### Write Requirements
-
-```
-Help me write requirements for a file upload feature using EARS format
-```
-
-Claude will use the requirements-engineering skill.
-
-### Create Technical Design
-
-```
-Design the architecture for a notification system
-```
-
-Claude will use the design-documentation skill.
-
-### Break Down Tasks
-
-```
-Break this design into implementation tasks
-```
-
-Claude will use the task-breakdown skill.
+| Command | Description |
+|---------|-------------|
+| `/kiro:spec-init` | Initialize a new specification |
+| `/kiro:spec-requirements` | Generate requirements |
+| `/kiro:spec-design` | Create technical design |
+| `/kiro:spec-tasks` | Generate implementation tasks |
+| `/kiro:spec-impl` | Execute tasks with TDD |
+| `/kiro:spec-quick` | Quick spec generation |
+| `/kiro:spec-status` | Show spec progress |
+| `/kiro:steering` | Manage steering documents |
+| `/kiro:steering-custom` | Create custom steering documents |
+| `/kiro:validate-design` | Validate technical design |
+| `/kiro:validate-gap` | Analyze implementation gaps |
+| `/kiro:validate-impl` | Validate implementation |
 
 ## Verifying Installation
 
@@ -93,20 +75,19 @@ Claude will use the task-breakdown skill.
 /plugin
 
 # Check plugin status
-/plugin info kiro-spec-driven
+/plugin info kiro
 ```
 
 ## Updating
 
 ```bash
-# Update to latest version
-/plugin update kiro-spec-driven@kiro-marketplace
+/plugin update kiro@kiro-marketplace
 ```
 
 ## Uninstalling
 
 ```bash
-/plugin uninstall kiro-spec-driven
+/plugin uninstall kiro
 ```
 
 ## Plugin Contents
@@ -114,25 +95,16 @@ Claude will use the task-breakdown skill.
 ```
 kiro/
 ├── .claude-plugin/
-│   ├── plugin.json          # Plugin manifest
-│   └── marketplace.json     # Marketplace config
-├── skills/
-│   ├── spec-driven-development/
-│   │   └── SKILL.md
-│   ├── requirements-engineering/
-│   │   └── SKILL.md
-│   ├── design-documentation/
-│   │   └── SKILL.md
-│   ├── task-breakdown/
-│   │   └── SKILL.md
-│   ├── ai-prompting/
-│   │   └── SKILL.md
-│   ├── quality-assurance/
-│   │   └── SKILL.md
-│   └── troubleshooting/
-│       └── SKILL.md
-├── mcp-server/              # Optional MCP server
-└── spec-process-guide/      # Full documentation
+│   └── marketplace.json       # Marketplace config
+├── plugins/
+│   └── kiro/
+│       ├── .claude-plugin/
+│       │   └── plugin.json    # Plugin manifest
+│       ├── agents/kiro/       # 9 agents
+│       ├── commands/kiro/     # 12 commands
+│       └── skills/kiro/       # 8 skills
+├── mcp-server/                # Optional MCP server
+└── spec-process-guide/        # Full documentation
 ```
 
 ## License
