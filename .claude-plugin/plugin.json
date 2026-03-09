@@ -1,6 +1,6 @@
 {
   "name": "kiro",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Spec-driven development methodology for Claude Code. Provides agents, commands, and skills for requirements engineering (EARS format), design documentation, task breakdown, AI prompting strategies, quality assurance, and troubleshooting.",
   "author": {
     "name": "SoftwareCats",

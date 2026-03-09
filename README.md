@@ -1,8 +1,5 @@
 # Spec-Driven Development Guide
 
-[![Run in Smithery](https://smithery.ai/badge/skills/jasonkneen)](https://smithery.ai/skills?ns=jasonkneen&utm_source=github&utm_medium=badge)
-
-
 A comprehensive guide to systematic feature development using the three-phase spec process: Requirements → Design → Tasks.
 
 <!-- Navigation Metadata -->
@@ -162,14 +159,14 @@ For more details, see the [MCP Server Documentation](mcp-server/README.md).
 
 ## 🎯 Claude Code Plugin
 
-Kiro is available as an installable Claude Code plugin with 7 skills following the [agentskills.io](https://agentskills.io) specification.
+Kiro is available as an installable Claude Code plugin with 9 agents, 12 commands, and 8 skills.
 
 ### Quick Install
 
 ```bash
 # In Claude Code
-/plugin marketplace add https://github.com/jasonkneen/kiro
-/plugin install kiro-spec-driven@kiro-marketplace
+/plugin marketplace add https://github.com/softwarecatscomgm/kiro
+/plugin install kiro@kiro-marketplace
 ```
 
 ### Available Skills
@@ -178,32 +175,43 @@ Once installed, Claude automatically uses these skills when relevant:
 
 | Skill | Description | Use When |
 |-------|-------------|----------|
-| [spec-driven-development](skills/spec-driven-development/) | Master methodology | "create a spec for..." |
-| [requirements-engineering](skills/requirements-engineering/) | EARS format | "write requirements for..." |
-| [design-documentation](skills/design-documentation/) | Technical architecture | "design the architecture..." |
-| [task-breakdown](skills/task-breakdown/) | Implementation planning | "break down into tasks..." |
-| [ai-prompting](skills/ai-prompting/) | AI communication | "how to prompt better..." |
-| [quality-assurance](skills/quality-assurance/) | Testing strategies | "testing strategy for..." |
-| [troubleshooting](skills/troubleshooting/) | Problem resolution | "debug this issue..." |
-| [create-steering-documents](skills/create-steering-documents/) | Project guidelines | "create steering documents..." |
+| [spec-driven-development](skills/kiro/spec-driven-development/) | Master methodology | "create a spec for..." |
+| [requirements-engineering](skills/kiro/requirements-engineering/) | EARS format | "write requirements for..." |
+| [design-documentation](skills/kiro/design-documentation/) | Technical architecture | "design the architecture..." |
+| [task-breakdown](skills/kiro/task-breakdown/) | Implementation planning | "break down into tasks..." |
+| [ai-prompting](skills/kiro/ai-prompting/) | AI communication | "how to prompt better..." |
+| [quality-assurance](skills/kiro/quality-assurance/) | Testing strategies | "testing strategy for..." |
+| [troubleshooting](skills/kiro/troubleshooting/) | Problem resolution | "debug this issue..." |
+| [create-steering-documents](skills/kiro/create-steering-documents/) | Project guidelines | "create steering documents..." |
+
+### Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `/kiro:spec-init` | Initialize a new specification |
+| `/kiro:spec-requirements` | Generate requirements |
+| `/kiro:spec-design` | Create technical design |
+| `/kiro:spec-tasks` | Generate implementation tasks |
+| `/kiro:spec-impl` | Execute tasks with TDD |
+| `/kiro:spec-quick` | Quick spec generation |
+| `/kiro:spec-status` | Show spec progress |
+| `/kiro:steering` | Manage steering documents |
+| `/kiro:steering-custom` | Create custom steering documents |
+| `/kiro:validate-design` | Validate technical design |
+| `/kiro:validate-gap` | Analyze implementation gaps |
+| `/kiro:validate-impl` | Validate implementation |
 
 ### Installation Options
 
 ```bash
 # User scope (available everywhere)
-/plugin install kiro-spec-driven@kiro-marketplace
+/plugin install kiro@kiro-marketplace
 
 # Project scope (shared via git)
-/plugin install kiro-spec-driven@kiro-marketplace --scope project
+/plugin install kiro@kiro-marketplace --scope project
 ```
 
-### Validate Skills
-
-```bash
-./scripts/validate-skills.sh
-```
-
-For more details, see the [Plugin Documentation](PLUGIN.md) and [Skills Documentation](skills/README.md).
+For more details, see the [Plugin Documentation](PLUGIN.md).
 
 ---
 
