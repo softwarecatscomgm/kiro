@@ -175,14 +175,14 @@ Once installed, Claude automatically uses these skills when relevant:
 
 | Skill | Description | Use When |
 |-------|-------------|----------|
-| [spec-driven-development](skills/kiro/spec-driven-development/) | Master methodology | "create a spec for..." |
-| [requirements-engineering](skills/kiro/requirements-engineering/) | EARS format | "write requirements for..." |
-| [design-documentation](skills/kiro/design-documentation/) | Technical architecture | "design the architecture..." |
-| [task-breakdown](skills/kiro/task-breakdown/) | Implementation planning | "break down into tasks..." |
-| [ai-prompting](skills/kiro/ai-prompting/) | AI communication | "how to prompt better..." |
-| [quality-assurance](skills/kiro/quality-assurance/) | Testing strategies | "testing strategy for..." |
-| [troubleshooting](skills/kiro/troubleshooting/) | Problem resolution | "debug this issue..." |
-| [create-steering-documents](skills/kiro/create-steering-documents/) | Project guidelines | "create steering documents..." |
+| [spec-driven-development](plugins/kiro/skills/kiro/spec-driven-development/) | Master methodology | "create a spec for..." |
+| [requirements-engineering](plugins/kiro/skills/kiro/requirements-engineering/) | EARS format | "write requirements for..." |
+| [design-documentation](plugins/kiro/skills/kiro/design-documentation/) | Technical architecture | "design the architecture..." |
+| [task-breakdown](plugins/kiro/skills/kiro/task-breakdown/) | Implementation planning | "break down into tasks..." |
+| [ai-prompting](plugins/kiro/skills/kiro/ai-prompting/) | AI communication | "how to prompt better..." |
+| [quality-assurance](plugins/kiro/skills/kiro/quality-assurance/) | Testing strategies | "testing strategy for..." |
+| [troubleshooting](plugins/kiro/skills/kiro/troubleshooting/) | Problem resolution | "debug this issue..." |
+| [create-steering-documents](plugins/kiro/skills/kiro/create-steering-documents/) | Project guidelines | "create steering documents..." |
 
 ### Available Commands
 
