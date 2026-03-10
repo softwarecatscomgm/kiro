@@ -8,32 +8,21 @@ A Claude Code plugin providing spec-driven development with agents, commands, an
 
 ```bash
 # In Claude Code
-/plugin marketplace add https://github.com/softwarecatscomgm/kiro
-/plugin install kiro@kiro-marketplace
-```
-
-### From Local Clone
-
-```bash
-git clone https://github.com/softwarecatscomgm/kiro.git
-cd kiro
-
-# In Claude Code (from parent directory)
-/plugin marketplace add ./kiro
-/plugin install kiro@kiro-marketplace
+/plugin marketplace add softwarecatscomgm/scc-marketplace
+/plugin install kiro@scc-marketplace
 ```
 
 ### Installation Scopes
 
 ```bash
 # User scope (default) - available in all projects
-/plugin install kiro@kiro-marketplace
+/plugin install kiro@scc-marketplace
 
 # Project scope - shared with team via git
-/plugin install kiro@kiro-marketplace --scope project
+/plugin install kiro@scc-marketplace --scope project
 
 # Local scope - project-specific, gitignored
-/plugin install kiro@kiro-marketplace --scope local
+/plugin install kiro@scc-marketplace --scope local
 ```
 
 ## Included Skills
@@ -46,6 +35,8 @@ Once installed, Claude will automatically use these skills when relevant:
 | **requirements-engineering** | EARS format requirements | "requirements", "acceptance criteria", "user stories" |
 | **design-documentation** | Technical architecture | "design document", "architecture", "technical design" |
 | **task-breakdown** | Implementation planning | "break down tasks", "implementation plan", "task list" |
+| **pipeline-orchestration** | Full lifecycle with quality gates | "run the full pipeline", "end-to-end spec" |
+| **spec-reviewer** | Autonomous spec artifact review | "review this spec", "quality gate", "GO/NO-GO" |
 | **ai-prompting** | AI communication strategies | "prompt better", "AI communication", "improve prompts" |
 | **quality-assurance** | Testing and validation | "quality", "testing strategy", "validation" |
 | **troubleshooting** | Problem resolution | "debug", "troubleshoot", "issue with" |
@@ -62,6 +53,8 @@ Once installed, Claude will automatically use these skills when relevant:
 | `/kiro:spec-impl` | Execute tasks with TDD |
 | `/kiro:spec-quick` | Quick spec generation |
 | `/kiro:spec-status` | Show spec progress |
+| `/kiro:pipeline` | Full lifecycle with quality gates and audit trail |
+| `/kiro:reviewer` | Autonomous spec artifact review against codebase |
 | `/kiro:steering` | Manage steering documents |
 | `/kiro:steering-custom` | Create custom steering documents |
 | `/kiro:validate-design` | Validate technical design |
@@ -81,7 +74,7 @@ Once installed, Claude will automatically use these skills when relevant:
 ## Updating
 
 ```bash
-/plugin update kiro@kiro-marketplace
+/plugin update kiro@scc-marketplace
 ```
 
 ## Uninstalling
@@ -95,14 +88,10 @@ Once installed, Claude will automatically use these skills when relevant:
 ```
 kiro/
 ├── .claude-plugin/
-│   └── marketplace.json       # Marketplace config
-├── plugins/
-│   └── kiro/
-│       ├── .claude-plugin/
-│       │   └── plugin.json    # Plugin manifest
-│       ├── agents/            # 9 agents
-│       ├── commands/           # 12 commands
-│       └── skills/             # 8 skills
+│   └── plugin.json            # Plugin manifest
+├── agents/                    # 9 agents
+├── commands/                  # 14 commands
+├── skills/                    # 10 skills
 ├── mcp-server/                # Optional MCP server
 └── spec-process-guide/        # Full documentation
 ```

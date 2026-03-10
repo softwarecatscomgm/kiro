@@ -165,8 +165,8 @@ Kiro is available as an installable Claude Code plugin with 9 agents, 12 command
 
 ```bash
 # In Claude Code
-/plugin marketplace add https://github.com/softwarecatscomgm/kiro
-/plugin install kiro@kiro-marketplace
+/plugin marketplace add softwarecatscomgm/scc-marketplace
+/plugin install kiro@scc-marketplace
 ```
 
 ### Available Skills
@@ -175,14 +175,16 @@ Once installed, Claude automatically uses these skills when relevant:
 
 | Skill | Description | Use When |
 |-------|-------------|----------|
-| [spec-driven-development](plugins/kiro/skills/spec-driven-development/) | Master methodology | "create a spec for..." |
-| [requirements-engineering](plugins/kiro/skills/requirements-engineering/) | EARS format | "write requirements for..." |
-| [design-documentation](plugins/kiro/skills/design-documentation/) | Technical architecture | "design the architecture..." |
-| [task-breakdown](plugins/kiro/skills/task-breakdown/) | Implementation planning | "break down into tasks..." |
-| [ai-prompting](plugins/kiro/skills/ai-prompting/) | AI communication | "how to prompt better..." |
-| [quality-assurance](plugins/kiro/skills/quality-assurance/) | Testing strategies | "testing strategy for..." |
-| [troubleshooting](plugins/kiro/skills/troubleshooting/) | Problem resolution | "debug this issue..." |
-| [create-steering-documents](plugins/kiro/skills/create-steering-documents/) | Project guidelines | "create steering documents..." |
+| [spec-driven-development](skills/spec-driven-development/) | Master methodology | "create a spec for..." |
+| [requirements-engineering](skills/requirements-engineering/) | EARS format | "write requirements for..." |
+| [design-documentation](skills/design-documentation/) | Technical architecture | "design the architecture..." |
+| [task-breakdown](skills/task-breakdown/) | Implementation planning | "break down into tasks..." |
+| [pipeline-orchestration](skills/pipeline-orchestration/) | Full lifecycle with quality gates | "run the full pipeline..." |
+| [spec-reviewer](skills/spec-reviewer/) | Autonomous spec artifact review | "review this spec..." |
+| [ai-prompting](skills/ai-prompting/) | AI communication | "how to prompt better..." |
+| [quality-assurance](skills/quality-assurance/) | Testing strategies | "testing strategy for..." |
+| [troubleshooting](skills/troubleshooting/) | Problem resolution | "debug this issue..." |
+| [create-steering-documents](skills/create-steering-documents/) | Project guidelines | "create steering documents..." |
 
 ### Available Commands
 
@@ -195,6 +197,8 @@ Once installed, Claude automatically uses these skills when relevant:
 | `/kiro:spec-impl` | Execute tasks with TDD |
 | `/kiro:spec-quick` | Quick spec generation |
 | `/kiro:spec-status` | Show spec progress |
+| `/kiro:pipeline` | Full lifecycle with quality gates and audit trail |
+| `/kiro:reviewer` | Autonomous spec artifact review against codebase |
 | `/kiro:steering` | Manage steering documents |
 | `/kiro:steering-custom` | Create custom steering documents |
 | `/kiro:validate-design` | Validate technical design |
@@ -205,10 +209,10 @@ Once installed, Claude automatically uses these skills when relevant:
 
 ```bash
 # User scope (available everywhere)
-/plugin install kiro@kiro-marketplace
+/plugin install kiro@scc-marketplace
 
 # Project scope (shared via git)
-/plugin install kiro@kiro-marketplace --scope project
+/plugin install kiro@scc-marketplace --scope project
 ```
 
 For more details, see the [Plugin Documentation](PLUGIN.md).
