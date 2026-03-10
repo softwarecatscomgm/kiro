@@ -9,7 +9,7 @@
       "name": "kiro",
       "source": "./plugins/kiro",
       "description": "Spec-driven development methodology with agents, commands, and skills for requirements, design, tasks, AI prompting, QA, and troubleshooting",
-      "version": "1.1.2"
+      "version": "1.2.0"
     }
   ]
 }
