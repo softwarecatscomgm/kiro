@@ -7,15 +7,15 @@ argument-hint: <feature-name> [-y] [--sequential]
 # Implementation Tasks Generator
 
 ## Parse Arguments
-- Feature name: `$1`
-- Auto-approve flag: `$2` (optional, "-y")
-- Sequential mode flag: `$3` (optional, "--sequential")
+- Feature name: `$0`
+- Auto-approve flag: `$1` (optional, "-y")
+- Sequential mode flag: `$2` (optional, "--sequential")
 
 ## Validate
 Check that design has been completed:
-- Verify `.kiro/specs/$1/` exists
-- Verify `.kiro/specs/$1/design.md` exists
-- Determine `sequential = ($3 == "--sequential")`
+- Verify `.kiro/specs/$0/` exists
+- Verify `.kiro/specs/$0/design.md` exists
+- Determine `sequential = ($2 == "--sequential")`
 
 If validation fails, inform user to complete design phase first.
 
@@ -30,13 +30,13 @@ Task(
   subagent_type="spec-tasks-agent",
   description="Generate implementation tasks",
   prompt="""
-Feature: $1
-Spec directory: .kiro/specs/$1/
-Auto-approve: {true if $2 == "-y", else false}
+Feature: $0
+Spec directory: .kiro/specs/$0/
+Auto-approve: {true if $1 == "-y", else false}
 Sequential mode: {true if sequential else false}
 
 File patterns to read:
-- .kiro/specs/$1/*.{json,md}
+- .kiro/specs/$0/*.{json,md}
 - .kiro/steering/*.md
 - .kiro/settings/rules/tasks-generation.md
 - .kiro/settings/rules/tasks-parallel-analysis.md (include only when sequential mode is false)
@@ -64,12 +64,12 @@ Show Subagent summary to user, then provide next step guidance:
 - Fresh context ensures clean state and proper task focus
 
 **If Tasks Approved**:
-- Execute specific task: `/kiro:spec-impl $1 1.1` (recommended: clear context between each task)
-- Execute multiple tasks: `/kiro:spec-impl $1 1.1,1.2` (use cautiously, clear context between tasks)
-- Without arguments: `/kiro:spec-impl $1` (executes all pending tasks - NOT recommended due to context bloat)
+- Execute specific task: `/kiro:spec-impl $0 1.1` (recommended: clear context between each task)
+- Execute multiple tasks: `/kiro:spec-impl $0 1.1,1.2` (use cautiously, clear context between tasks)
+- Without arguments: `/kiro:spec-impl $0` (executes all pending tasks - NOT recommended due to context bloat)
 
 **If Modifications Needed**:
-- Provide feedback and re-run `/kiro:spec-tasks $1`
+- Provide feedback and re-run `/kiro:spec-tasks $0`
 - Existing tasks used as reference (merge mode)
 
 **Note**: The implementation phase will guide you through executing tasks with appropriate context and validation.

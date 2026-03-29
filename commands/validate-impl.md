@@ -7,23 +7,23 @@ argument-hint: [feature-name] [task-numbers]
 # Implementation Validation
 
 ## Parse Arguments
-- Feature name: `$1` (optional)
-- Task numbers: `$2` (optional)
+- Feature name: `$0` (optional)
+- Task numbers: `$1` (optional)
 
 ## Auto-Detection Logic
 
 **Perform detection before invoking Subagent**:
 
-**If no arguments** (`$1` empty):
+**If no arguments** (`$0` empty):
 - Parse conversation history for `/kiro:spec-impl <feature> [tasks]` patterns
 - OR scan `.kiro/specs/*/tasks.md` for `[x]` checkboxes
 - Pass detected features and tasks to Subagent
 
-**If feature only** (`$1` present, `$2` empty):
-- Read `.kiro/specs/$1/tasks.md` and find all `[x]` checkboxes
+**If feature only** (`$0` present, `$1` empty):
+- Read `.kiro/specs/$0/tasks.md` and find all `[x]` checkboxes
 - Pass feature and detected tasks to Subagent
 
-**If both provided** (`$1` and `$2` present):
+**If both provided** (`$0` and `$1` present):
 - Pass directly to Subagent without detection
 
 ## Invoke Subagent
@@ -37,8 +37,8 @@ Task(
   subagent_type="validate-impl-agent",
   description="Validate implementation",
   prompt="""
-Feature: {$1 or auto-detected}
-Target tasks: {$2 or auto-detected}
+Feature: {$0 or auto-detected}
+Target tasks: {$1 or auto-detected}
 Mode: {auto-detect, feature-all, or explicit}
 
 File patterns to read:
