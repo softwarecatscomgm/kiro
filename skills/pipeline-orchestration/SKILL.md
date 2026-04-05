@@ -211,3 +211,4 @@ These thresholds are enforced at quality gates:
 | Declare Phase 6 COMPLETE with unchecked tasks | Verify every `[ ]` is `[x]` before marking COMPLETE |
 | Skip E2E gate in Phase 7 because user hasn't given permission yet | Ask for permission. If declined, use GO-PENDING-E2E verdict -- never plain GO |
 | Set spec.json phase to `completed` without E2E passing | Phase stays `implementation-complete` until E2E tests run and pass |
+| Present a phase summary table with "next steps" options after any phase that has no manual approval gate | Invoke the next phase immediately. Summary output belongs in pipeline-log.md, not as a user prompt. A summary followed by "run X to proceed" IS a manual gate — it has the same effect as pausing for approval. |
